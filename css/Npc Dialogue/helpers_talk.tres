@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://l0p4cl5lcd5e"]
+
+[ext_resource type="Script" uid="uid://cohxxwjcgfll4" path="res://css/dialogue/dialogue.gd" id="1_m2qty"]
+
+[resource]
+script = ExtResource("1_m2qty")
+npc_name = "Helper"
+lines = Array[String](["Hello! I see you are new here.", "You are welcome to our hometown, Blingrad!", "We have different people around here.", "The only rule. DO NOT COME NEAR WATER.", "Enjoy your stay!"])
+metadata/_custom_type_script = "uid://cohxxwjcgfll4"
