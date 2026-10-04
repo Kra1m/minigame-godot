@@ -1,0 +1,5 @@
+I watched tutorial how to make chat bubble but it didnt work out well so now it is like that sadly..Therefore the game isnt
+great now.
+
+I would like to change chat work and how to make npc interactable changing their lines and their sprites depending on if a
+player is talking to them or not.
