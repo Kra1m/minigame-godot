@@ -334,10 +334,8 @@ height = 20.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1701642107]
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_4kxuq")
-animation = &"idle_front"
-autoplay = "idle_front"
-frame = 2
-frame_progress = 0.84958714
+animation = &"idle_left"
+autoplay = "idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834944475]
 position = Vector2(0, -12)

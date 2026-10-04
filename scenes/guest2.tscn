@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bofh8q0w8jh8s"]
+
+[ext_resource type="Texture2D" uid="uid://dachh60lc4l6k" path="res://css/characters/005.png" id="1_hft40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41ppo"]
+atlas = ExtResource("1_hft40")
+region = Rect2(0, 624, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfgxh"]
+atlas = ExtResource("1_hft40")
+region = Rect2(48, 624, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ddr"]
+atlas = ExtResource("1_hft40")
+region = Rect2(96, 624, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11yto"]
+atlas = ExtResource("1_hft40")
+region = Rect2(144, 624, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5sy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41ppo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfgxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ddr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11yto")
+}],
+"loop": 1,
+"name": &"chopping",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mti6b"]
+radius = 5.0
+height = 20.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1916074037]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1701642107]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_u5sy4")
+animation = &"chopping"
+autoplay = "chopping"
+frame_progress = 0.8688925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834944475]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_mti6b")

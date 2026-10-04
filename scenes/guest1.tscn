@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bhftkt0pxyp38"]
+
+[ext_resource type="Texture2D" uid="uid://t8je3neq5mvn" path="res://css/characters/002.png" id="1_opsph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovtue"]
+atlas = ExtResource("1_opsph")
+region = Rect2(0, 1344, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11rwv"]
+atlas = ExtResource("1_opsph")
+region = Rect2(48, 1344, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkiat"]
+atlas = ExtResource("1_opsph")
+region = Rect2(96, 1344, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hskpd"]
+atlas = ExtResource("1_opsph")
+region = Rect2(144, 1344, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kxuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovtue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11rwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkiat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hskpd")
+}],
+"loop": 1,
+"name": &"idle_front",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mti6b"]
+radius = 5.0
+height = 20.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1916074037]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1701642107]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_4kxuq")
+animation = &"idle_front"
+autoplay = "idle_front"
+frame_progress = 0.80297905
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834944475]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_mti6b")
