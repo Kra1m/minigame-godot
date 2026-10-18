@@ -8,17 +8,44 @@ var current_dir = "none"
 
 var can_move: bool = true
 
+var in_battle: bool = true
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle_front")
 
 func _physics_process(delta: float) -> void:
+	"""
 	if can_move: 
 		player_movements(delta)
+	"""
 	
+	if can_move:
+		player_fight(delta)
 
 
-func player_movements(delta):
+func player_fight(_delta):
+	if Input.is_action_pressed("forward"):
+		current_dir = "forward"
+		battle_animation(1)
+		velocity.y = -SPEED 
+		velocity.x = 0
+	elif Input.is_action_pressed("down"):
+		current_dir = "down"
+		battle_animation(1)
+		velocity.y = SPEED 
+		velocity.x = 0
+	elif Input.is_action_pressed("interact"):
+		current_dir = "attack"
+		battle_animation(1)
+	else:
+		battle_animation(0)
+		velocity.x = 0
+		velocity.y = 0
+		
+	move_and_slide()
 	
+
+func player_movements(_delta):
 	if Input.is_action_pressed("forward"):
 		current_dir = "forward"
 		play_animation(1)
@@ -74,3 +101,25 @@ func play_animation(movements):
 			anim.play("walk_up")
 		elif movements == 0:
 			anim.play("idle_back")
+			
+
+func battle_animation(movements):
+	var anim = $AnimatedSprite2D
+	var dir = current_dir
+	if dir == "down":
+		if movements == 1:
+			anim.play("walk_down")
+		elif movements == 0:
+			anim.play("idle_battle")
+	
+	if dir == "forward":
+		if movements == 1:
+			anim.play("walk_up")
+		elif movements == 0:
+			anim.play("idle_battle")
+		
+	if dir == "attack":
+		if movements == 1:
+			anim.play("attacking")
+		elif movements == 0:
+			anim.play("idle_battle")

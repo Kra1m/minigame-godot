@@ -13,11 +13,11 @@ var current_dialogue: Dialogue
 var visible_chars: float
 var current_line: int
 
-@export var TESTING: Dialogue 
+#@export var TESTING: Dialogue 
 
 func _ready() -> void:
 	close_dialogue()
-	set_dialogue(TESTING)
+	#set_dialogue(TESTING)
 	
 func set_dialogue (dialogue: Dialogue):
 	current_dialogue = dialogue
